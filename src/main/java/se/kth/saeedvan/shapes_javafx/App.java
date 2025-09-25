@@ -1,4 +1,4 @@
-package se.kth.anderslm.labb3;
+package se.kth.saeedvan.shapes_javafx;
 
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
@@ -10,8 +10,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
-import se.kth.anderslm.labb3.shapes.*;
-
+import se.kth.saeedvan.shapes_javafx.shapes.*;
 public class App extends Application {
 
     private World world;

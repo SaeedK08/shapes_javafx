@@ -28,8 +28,8 @@ public class World {
 
         shapes = new ArrayList<>();
         shapes.add(new Line(0,0,100,100,Color.RED));
-        shapes.add(new Rectangle(0,0,100,100,Color.GREEN,false));
-        shapes.add(new Circle(100,100,80,Color.CYAN,false));
+        shapes.add(new Rectangle(0,0,100,100,Color.GREEN));
+        shapes.add(new Circle(100,100,80,Color.CYAN));
         shapes.get(0).setVelocity(300,400);
         shapes.get(1).setVelocity(200,300);
         shapes.get(2).setVelocity(250,150);

@@ -6,8 +6,8 @@ import javafx.scene.paint.Color;
 public class Circle extends FillableShape {
     private double diameter;
 
-    public Circle(double x,double y, double diameter, Color color, boolean fill){
-        super(x, y, color, fill);
+    public Circle(double x,double y, double diameter, Color color){
+        super(x, y, color);
         this.diameter = diameter;
     }
 

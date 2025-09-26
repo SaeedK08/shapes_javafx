@@ -3,11 +3,11 @@ package se.kth.saeedvan.shapes_javafx.shapes;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
-public class Rectangle extends Shape{
+public class Rectangle extends FillableShape{
     private double width, height;
 
-    public Rectangle(double x, double y, double height, double width, Color color){
-        super(x, y, color);
+    public Rectangle(double x, double y, double height, double width, Color color, boolean fill){
+        super(x, y, color, fill);
         this.height = height;
         this.width = width;
     }
@@ -52,8 +52,15 @@ public class Rectangle extends Shape{
 
     @Override
     public void paint(GraphicsContext gc) {
-        gc.setFill(getColor());
-        gc.fillRect(getX(), getY(), this.height, this.width);
+        if (isFilled()) {
+            gc.setFill(getColor());
+            gc.fillRect(getX(), getY(), this.height, this.width);
+        }
+        else {
+            gc.setStroke(getColor());
+            gc.strokeRect(getX(), getY(), this.height, this.width);
+        }
+
     }
 
     @Override

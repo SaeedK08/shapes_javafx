@@ -1,6 +1,7 @@
-package se.kth.saeedvan.shapes_javafx.shapes; // TODO: Change to your package name
+package se.kth.saeedvan.shapes_javafx.shapes;
 
 import javafx.scene.paint.Color;
+import java.util.ArrayList;
 
 /**
  * A representation of a world containing a set of moving shapes. NB! The worlds
@@ -12,7 +13,7 @@ public class World {
 
     private double width, height; // this worlds width and height
 
-    private final Shape[] shapes; // an array of references to the shapes
+    private final ArrayList<Shape> shapes; // an array of references to the shapes
 
     /**
      * Creates a new world, containing a pad and a set of balls. NB! The worlds
@@ -25,13 +26,22 @@ public class World {
         this.width = width;
         this.height = height;
 
-        shapes = new Shape[3]; // an array of references (change to non-zero size)
-        shapes[0] = new Line(0, 0, 100, 100, Color.BLACK);
-        shapes[1] = new Rectangle(0, 0, 100,100, Color.BLACK, false);
-        shapes[2] = new Circle(0,0,80, Color.rgb(123,50,250), true);
-        shapes[0].setVelocity(300, 500);
-        shapes[1].setVelocity(300, 100);
-        shapes[2].setVelocity(200, 150);
+        shapes = new ArrayList<>();
+        shapes.add(new Line(0,0,100,100,Color.RED));
+        shapes.add(new Rectangle(0,0,100,100,Color.GREEN,false));
+        shapes.add(new Circle(100,100,80,Color.CYAN,false));
+        shapes.get(0).setVelocity(300,400);
+        shapes.get(1).setVelocity(200,300);
+        shapes.get(2).setVelocity(250,150);
+
+        for (Shape sh : shapes) {
+            if (sh instanceof FillableShape) {
+                ((FillableShape) sh).setFilled(true);
+            }
+        }
+        //Rectangle rect = (Rectangle) shapes[1];
+        //rect.setFilled();
+
 
 
         // Create the actual Shape objects (sub types)
@@ -68,7 +78,7 @@ public class World {
      *
      * @return a copy of the list of balls
      */
-    public Shape[] getShapes() {
-        return (Shape[]) shapes.clone();
+    public ArrayList<Shape> getShapes() {
+        return (ArrayList<Shape>) shapes.clone();
     }
 }

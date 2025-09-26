@@ -3,7 +3,7 @@ package se.kth.saeedvan.shapes_javafx.shapes;
 
 import javafx.scene.paint.Color;
 
-abstract class FillableShape extends Shape {
+public abstract class FillableShape extends Shape {
     private boolean filled;
     protected FillableShape(double x, double y, Color color, boolean fill) {
         super(x, y, color);
@@ -17,6 +17,7 @@ abstract class FillableShape extends Shape {
         return this.filled;
     }
     public void setFilled(boolean fill) {
+
         this.filled = fill;
     }
 }
